@@ -14,7 +14,7 @@ class CreateRestsTable extends Migration
     public function up()
     {
         Schema::create('rests', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->primary()->comment('休憩ID');
+            $table->id();
             $table->unsignedBigInteger('user_id')->comment('ユーザーID');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->unsignedBigInteger('work_id')->comment('勤怠ID');

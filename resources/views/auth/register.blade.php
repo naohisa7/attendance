@@ -16,14 +16,14 @@
             <div>
                 <x-label for="name" :value="__('名前')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="name" class="block mt-1 w-full" placeholder="名前" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('メールアドレス')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="block mt-1 w-full" placeholder="メールアドレス" type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
@@ -31,6 +31,7 @@
                 <x-label for="password" :value="__('パスワード')" />
 
                 <x-input id="password" class="block mt-1 w-full"
+                                placeholder="パスワード"
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
@@ -41,6 +42,7 @@
                 <x-label for="password_confirmation" :value="__('確認用パスワード')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
+                                placeholder="確認用パスワード"
                                 type="password"
                                 name="password_confirmation" required />
             </div>

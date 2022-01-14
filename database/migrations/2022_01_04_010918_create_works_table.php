@@ -14,7 +14,7 @@ class CreateWorksTable extends Migration
     public function up()
     {
         Schema::create('works', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->primary()->comment('勤怠ID');
+            $table->id();
             $table->unsignedBigInteger('user_id')->comment('ユーザーID');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->time('start_time')->comment('勤務開始時間');
