@@ -13,7 +13,6 @@ switch ($align) {
         $alignmentClasses = 'origin-top-right right-0';
         break;
 }
-
 switch ($width) {
     case '48':
         $width = 'w-48';
@@ -21,7 +20,7 @@ switch ($width) {
 }
 @endphp
 
-<div class="relative" x-data="{ open: false }" @click.outside="open = false" @close.stop="open = false">
+<div class="relative" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
     <div @click="open = ! open">
         {{ $trigger }}
     </div>

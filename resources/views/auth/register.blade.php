@@ -1,61 +1,55 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+    
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <body>
+        <header class="header flex__item">
+            <a class="header__nav-list-link header-title">Atte</a>
+        </header>
+        <div class="service">
+            <p class="service-title">会員登録</p>
+            <div class="service_png-position">
+                <div class="service_png-positiondiv">
+                    <form method="POST" action="">
+                        @csrf
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+                        <!-- Name -->
+                        <div class="form-item">
+                            <x-input id="name" class="form-btn" type="text" name="name" :value="old('name')" required autofocus placeholder="名前" />
+                        </div>
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('名前')" />
+                        <!-- Email Address -->
+                        <div class="form-item">
+                            <x-input id="email" class="form-btn" type="email" name="email" :value="old('email')" required placeholder="メールアドレス" />
+                        </div>
 
-                <x-input id="name" class="block mt-1 w-full" placeholder="名前" type="text" name="name" :value="old('name')" required autofocus />
+                        <!-- Password -->
+                        <div class="form-item">
+                            <x-input id="password" class="form-btn" type="password" name="password" required autocomplete="new-password" placeholder="パスワード" />
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="form-item">
+                            <x-input id="password_confirmation" class="form-btn" type="password" name="password_confirmation" required placeholder="確認用パスワード" />
+                        </div>
+
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                        
+                        <div class="form-item">
+                            <x-button class="form-btn1">
+                                {{ __('会員登録') }}
+                            </x-button>
+                            <p class="text">アカウントをお持ちの方はこちら</p>
+                        </div>
+                        <a class="login_btn" style="color:blue;" href="{{ route('login') }}">
+                            {{ __('ログイン') }}
+                        </a>
+                    </form>
+                </div>
             </div>
+        </div>
+        <p class="service-title2">Atte,inc.</p>
+    </body>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('メールアドレス')" />
-
-                <x-input id="email" class="block mt-1 w-full" placeholder="メールアドレス" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('パスワード')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                placeholder="パスワード"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('確認用パスワード')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                placeholder="確認用パスワード"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('ログイン画面へ') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('会員登録') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
+    </html>
 </x-guest-layout>

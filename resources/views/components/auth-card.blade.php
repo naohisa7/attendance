@@ -1,9 +1,21 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-    <div>
-        
-    </div>
-
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+<style>
+    .layout_card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 300px;
+    }
+    .card {
+        width: 500px;
+        padding: 20px 12px 10px;
+        border: 1px solid #e9eaea;
+        border-radius: 12px;
+        transition: 0.3s;
+        justify-content: center;
+    }
+</style>
+<div class="layout_card">
+    <div class="card">
         {{ $slot }}
     </div>
 </div>
